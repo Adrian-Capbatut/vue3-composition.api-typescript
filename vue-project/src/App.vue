@@ -20,7 +20,7 @@ const word = ref('василий')
 
       <GameWrongLetters />
 
-      <GameWord />
+      <GameWord :word="word" />
     </div>
 
     <!-- Container for final message -->
