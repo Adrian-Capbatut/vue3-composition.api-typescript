@@ -29,7 +29,7 @@ window.addEventListener('keydown', ({ key }) => {
 
     <GameWrongLetters />
 
-    <GameWord :word="word" />
+    <GameWord :word="word" :correct-letters="correctLetters" />
   </div>
 
   <!-- Container for final message -->
