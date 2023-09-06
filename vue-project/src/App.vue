@@ -12,7 +12,7 @@ const letters = ref<string[]>([])
 
 window.addEventListener('keydown', ({ key }) => {
   if (/[а-яА-ЯёЁ]/.test(key)) {
-    letters.value.push(key)
+    letters.value.push(key.toLowerCase())
   }
 })
 </script>
