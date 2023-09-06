@@ -9,6 +9,11 @@ import { ref } from 'vue'
 
 const word = ref('василий')
 
+window.addEventListener('keydown', ({ key }) => {
+  console.log('raw key', key)
+  if (/[а-яА-ЯёЁ]/.test(key))
+    console.log('filtered key', key)
+})
 </script>
 
 <template>
