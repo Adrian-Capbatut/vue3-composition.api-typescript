@@ -8,30 +8,31 @@ import GameNotification from './components/GameNotification.vue'
 import { ref } from 'vue'
 
 const word = ref('василий')
+const letters = ref<string[]>([])
 
 window.addEventListener('keydown', ({ key }) => {
-  console.log('raw key', key)
-  if (/[а-яА-ЯёЁ]/.test(key))
-    console.log('filtered key', key)
+  if (/[а-яА-ЯёЁ]/.test(key)) {
+    letters.value.push(key)
+  }
 })
 </script>
 
 <template>
-  <div id="app">
-    <GameHeader />
+  {{ word }}
+  {{ letters }}
+  <GameHeader />
 
-    <div class="game-container">
-      <GameFigure />
+  <div class="game-container">
+    <GameFigure />
 
-      <GameWrongLetters />
+    <GameWrongLetters />
 
-      <GameWord :word="word" />
-    </div>
-
-    <!-- Container for final message -->
-    <GamePopup v-if="false" />
-
-    <!-- Notification -->
-    <GameNotification />
+    <GameWord :word="word" />
   </div>
+
+  <!-- Container for final message -->
+  <GamePopup v-if="false" />
+
+  <!-- Notification -->
+  <GameNotification />
 </template>
