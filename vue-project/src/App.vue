@@ -20,8 +20,9 @@ watch(wrongLetters, () => {
   }
 })
 
-watch(wrongLetters, () => {
-  if (wrongLetters.value.length === word.value.length) {
+watch(correctLetters, () => {
+  //masiv
+  if ([...word.value].every(x => correctLetters.value.includes(x))) {
     popup.value?.open('win')
   }
 })
