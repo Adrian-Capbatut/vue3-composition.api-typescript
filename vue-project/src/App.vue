@@ -6,6 +6,7 @@ import GameWord from './components/GameWord.vue'
 import GamePopup from './components/GamePopup.vue'
 import GameNotification from './components/GameNotification.vue'
 import { computed, ref, watch } from 'vue'
+import axios from 'axios'
 
 const word = ref('василий')
 const letters = ref<string[]>([])
