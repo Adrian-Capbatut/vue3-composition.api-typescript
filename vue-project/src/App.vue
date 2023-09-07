@@ -16,6 +16,7 @@ const notification = ref<InstanceType<typeof GameNotification> | null>(null)
 window.addEventListener('keydown', ({ key }) => {
   if (letters.value.includes(key)) {
     notification.value?.open()
+    setTimeout(() => notification.value?.close(), 2000)
     return
   }
 
