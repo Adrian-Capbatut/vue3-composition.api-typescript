@@ -37,6 +37,11 @@ window.addEventListener('keydown', ({ key }) => {
     letters.value.push(key.toLowerCase())
   }
 })
+
+const restart = () => {
+  letters.value = []
+  popup.value?.close()
+}
 </script>
 
 <template>
@@ -51,7 +56,7 @@ window.addEventListener('keydown', ({ key }) => {
   </div>
 
   <!-- Container for final message -->
-  <GamePopup ref="popup" :word="word" />
+  <GamePopup ref="popup" :word="word" @restart="restart" />
 
   <!-- Notification -->
   <GameNotification ref="notification" />
